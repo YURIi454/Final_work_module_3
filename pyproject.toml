@@ -11,7 +11,8 @@ dependencies = [
     "chardet (>=5.2.0,<6.0.0)",
     "requests (>=2.32.3,<3.0.0)",
     "python-dotenv (>=1.0.1,<2.0.0)",
-    "pandas (>=2.2.3,<3.0.0)"
+    "pandas (>=2.2.3,<3.0.0)",
+    "openpyxl (>=3.1.5,<4.0.0)"
 ]
 
 

@@ -1,8 +1,13 @@
 import logging
 
+from config import PATH_LOGS
+
+# from custom_loger import get_logger
+# logger = get_logger()
+
 
 def get_file_handler():  # type:ignore
-    file_handler = logging.FileHandler("logs/logs.log", mode="w", encoding="UTF-8")
+    file_handler = logging.FileHandler(PATH_LOGS, mode="w", encoding="UTF-8")
     file_handler.setLevel(logging.DEBUG)
     file_handler.setFormatter(
         logging.Formatter("%(asctime)s - [%(levelname)s] - (%(filename)s).%(funcName)s  %(message)s")
@@ -12,7 +17,7 @@ def get_file_handler():  # type:ignore
 
 def get_stream_handler():  # type:ignore
     stream_handler = logging.StreamHandler()
-    stream_handler.setLevel(logging.CRITICAL)
+    stream_handler.setLevel(logging.WARNING)
     stream_handler.setFormatter(
         logging.Formatter("%(asctime)s - [%(levelname)s] - (%(filename)s).%(funcName)s  %(message)s")
     )
