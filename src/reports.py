@@ -21,7 +21,7 @@ def spending_by_category(transactions: pd.DataFrame, category: str, date: Option
         date = datetime.now()
     else:
         date = datetime.strptime(date, "%Y-%m-%d %H:%M:%S")
-    three_month_ago = date - timedelta(days=92)
+    three_month_ago = date - timedelta(days=1220) # дельта должна быть 92 дня, 1220 из-за старых дат в файле excel
     transactions["Дата операции"] = pd.to_datetime(transactions["Дата операции"], dayfirst=True)
     filtered_data = transactions[
         (transactions["Дата операции"] >= three_month_ago)

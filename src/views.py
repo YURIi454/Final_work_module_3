@@ -89,12 +89,11 @@ def top_transactions(transactions: pd.DataFrame) -> Any:
 def main_page(date: Any) -> dict:
     """Функция главной страницы."""
 
-    struct_file_json = card_number(xlsx_handler(PATH_XLSX))
     json_response = {
         "greeting": get_greeting(date),
-        "cards": card_number(struct_file_json),
-        "top_transactions": top_transactions(struct_file_json),
+        "cards": card_number(xlsx_handler(PATH_XLSX)),
+        "top_transactions": top_transactions(xlsx_handler(PATH_XLSX)),
         "currency_rates": external_request_api_currency(),
-        "stock_prices": external_request_api_sp_500(),
+        "stock_prices": external_request_api_sp_500()
     }
     return json_response

@@ -1,10 +1,10 @@
 import pandas as pd
 
 
-def xlsx_handler(path:str) -> pd.DataFrame:
+def xlsx_handler(path: str) -> pd.DataFrame:
     """Возвращает DataFrame"""
 
-    return pd.read_excel(path)
+    return pd.read_excel(path).fillna(0.0)
 
 
 def xlsx_handler_to_dict(path: str) -> list[dict]:

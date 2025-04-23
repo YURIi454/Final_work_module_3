@@ -1,6 +1,9 @@
 import json
 import re
 
+from pandas import read_excel
+
+from config import PATH_XLSX
 from custom_loger import get_logger
 
 logger = get_logger()
